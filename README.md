@@ -13,7 +13,51 @@ npm install
 npm run dev      # start local dev server on http://localhost:5173
 npm run build    # production build -> /dist
 npm run preview  # preview the production build
+npm run lint     # ESLint
+npm run format   # Prettier write
 ```
+
+## VS Code Setup
+
+Open the project folder in VS Code — you'll be prompted to install the
+**recommended extensions** listed in `.vscode/extensions.json`:
+
+| Extension                             | Purpose                                   |
+| ------------------------------------- | ----------------------------------------- |
+| `dbaeumer.vscode-eslint`              | Inline lint diagnostics                   |
+| `esbenp.prettier-vscode`              | Format on save                            |
+| `bradlc.vscode-tailwindcss`           | Tailwind class autocomplete & preview     |
+| `dsznajder.es7-react-js-snippets`     | `rafce` / `useState` React snippets       |
+| `formulahendry.auto-rename-tag`       | Rename paired JSX tags                    |
+| `christian-kohler.path-intellisense`  | File-path autocomplete                    |
+| `naumovs.color-highlight`             | Color swatches in the gutter              |
+| `streetsidesoftware.code-spell-checker` | Spell-check for code & comments         |
+| `eamodio.gitlens`                     | Git blame & history inline                |
+
+Everything else is pre-wired:
+
+- `.vscode/settings.json` — format-on-save with Prettier, Tailwind IntelliSense, Emmet for JSX, trim trailing whitespace, `@/` path autocomplete.
+- `.vscode/launch.json` — F5 launches Chrome/Edge against `http://localhost:5173` with source maps.
+- `.vscode/tasks.json` — `Ctrl/Cmd+Shift+B` runs `npm run dev` as the default build task.
+- `.prettierrc.json` + `.prettierignore` — code style.
+- `.eslintrc.cjs` — React + hooks lint rules.
+- `jsconfig.json` — path alias `@/ → src/` for IntelliSense (matched by `vite.config.js`).
+
+### Using the `@/` alias
+
+```js
+// Instead of:
+import Navbar from "../components/Navbar.jsx";
+// You can write:
+import Navbar from "@/components/Navbar.jsx";
+```
+
+### Typical VS Code workflow
+
+1. `Cmd/Ctrl+Shift+P` → `Tasks: Run Build Task` (or just `npm run dev`).
+2. `F5` launches a debuggable Chrome/Edge window pointed at the dev server.
+3. Save any file — Prettier formats, ESLint auto-fixes.
+
 
 ## Deploy to Vercel
 

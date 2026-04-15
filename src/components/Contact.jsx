@@ -34,7 +34,7 @@ export default function Contact() {
           className="max-w-2xl"
         >
           <span className="eyebrow">Get in Touch</span>
-          <h2 className="heading mt-3">We'd love to hear from you.</h2>
+          <h2 className="heading mt-3">We&apos;d love to hear from you.</h2>
           <p className="subheading mt-4">
             Have a question about a product, pricing, or delivery? Reach out —
             we respond quickly.
@@ -123,7 +123,7 @@ export default function Contact() {
               Send us a message
             </h3>
             <p className="text-sm text-muted mt-1">
-              Fill the form — we'll get back to you shortly.
+              Fill the form — we&apos;ll get back to you shortly.
             </p>
 
             <div className="mt-7 grid sm:grid-cols-2 gap-5">
