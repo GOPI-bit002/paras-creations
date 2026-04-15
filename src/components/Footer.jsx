@@ -39,16 +39,16 @@ export default function Footer() {
               into every home with quality products and trusted service.
             </p>
 
-            <div className="mt-6 inline-flex items-center gap-3 px-4 py-2.5 rounded-full bg-white/5 backdrop-blur border border-white/10">
-              <div className="w-7 h-7 rounded-lg bg-brand-gradient flex items-center justify-center">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M2 9V5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v4"></path>
-                  <path d="M2 11h20v7a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7z"></path>
-                </svg>
-              </div>
-              <span className="text-sm text-white">
+            <div className="mt-6 inline-flex items-center gap-3 px-3 py-2 rounded-2xl bg-white border border-white/10 shadow-soft">
+              <img
+                src="/images/spenta-logo.png"
+                alt="Spenta Mattress"
+                className="h-10 w-auto rounded-lg"
+                onError={(e) => { e.currentTarget.style.display = 'none' }}
+              />
+              <span className="text-sm text-slate-700 pr-2">
                 Powered by{' '}
-                <span className="font-semibold">Spenta Mattress</span>
+                <span className="font-semibold text-slate-900">Spenta Mattress</span>
               </span>
             </div>
           </motion.div>
