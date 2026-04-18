@@ -13,7 +13,9 @@ export default function AdminLayout({
       <div className="min-h-screen bg-brand-soft flex">
         <AdminSidebar />
         <div className="flex-1 min-w-0">
-          <main className="p-5 sm:p-8 pt-20 lg:pt-8">{children}</main>
+          <main className="p-5 sm:p-8 pt-20 lg:pt-8 max-w-[1400px] mx-auto">
+            {children}
+          </main>
         </div>
       </div>
     </AdminAuthGate>

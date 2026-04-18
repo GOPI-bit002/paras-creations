@@ -6,9 +6,15 @@ interface Props {
 
 export default function AdminHeader({ title, description, action }: Props) {
   return (
-    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8">
+    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8 pb-5 border-b border-gray-200">
       <div>
-        <h1 className="font-display font-extrabold text-2xl sm:text-3xl text-brand-black">
+        <div className="flex items-center gap-2">
+          <span className="gold-divider" />
+          <span className="text-[10px] uppercase tracking-[0.25em] text-brand-gold font-semibold">
+            Admin
+          </span>
+        </div>
+        <h1 className="mt-2 font-display font-extrabold text-2xl sm:text-3xl text-brand-black leading-tight">
           {title}
         </h1>
         {description && (

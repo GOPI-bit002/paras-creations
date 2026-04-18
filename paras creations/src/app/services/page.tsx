@@ -2,6 +2,7 @@ import Navbar from "@/components/public/Navbar";
 import Footer from "@/components/public/Footer";
 import SectionTitle from "@/components/public/SectionTitle";
 import ServiceCard from "@/components/public/ServiceCard";
+import Process from "@/components/public/Process";
 import Link from "next/link";
 import { services } from "@/data/services";
 import { company } from "@/data/company";
@@ -50,7 +51,9 @@ export default function ServicesPage() {
           </div>
         </section>
 
-        <section className="section-padding bg-brand-soft">
+        <Process />
+
+        <section className="section-padding bg-white">
           <div className="container-premium">
             <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-black to-brand-gray p-10 sm:p-14 text-white">
               <div

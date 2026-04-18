@@ -5,6 +5,9 @@ import Hero from "@/components/public/Hero";
 import SectionTitle from "@/components/public/SectionTitle";
 import ServiceCard from "@/components/public/ServiceCard";
 import ProjectCard from "@/components/public/ProjectCard";
+import Industries from "@/components/public/Industries";
+import Testimonials from "@/components/public/Testimonials";
+import Process from "@/components/public/Process";
 import { services } from "@/data/services";
 import { projects } from "@/data/projects";
 import { company } from "@/data/company";
@@ -19,6 +22,7 @@ export default function HomePage() {
 
       <main>
         <Hero />
+        <Industries />
 
         {/* Services preview */}
         <section className="section-padding bg-white">
@@ -50,7 +54,7 @@ export default function HomePage() {
               <SectionTitle
                 eyebrow="Signature Work"
                 title="Featured Projects"
-                subtitle="A snapshot of the government and private projects delivered under the leadership of Manoj Sharma."
+                subtitle={`A snapshot of the government and private projects delivered under the leadership of ${company.owner}.`}
                 align="left"
               />
               <Link href="/projects" className="btn-dark self-start lg:self-end">
@@ -66,10 +70,19 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* How we work */}
+        <Process />
+
         {/* Why choose us */}
         <section className="section-padding bg-brand-black text-white relative overflow-hidden">
           <div
             className="absolute -left-40 top-0 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl"
+            style={{
+              background: "radial-gradient(closest-side, #d4af37, transparent)"
+            }}
+          />
+          <div
+            className="absolute -right-40 bottom-0 w-[500px] h-[500px] rounded-full opacity-10 blur-3xl"
             style={{
               background: "radial-gradient(closest-side, #d4af37, transparent)"
             }}
@@ -86,9 +99,9 @@ export default function HomePage() {
               {company.whyChooseUs.map((item, idx) => (
                 <div
                   key={item.title}
-                  className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-brand-gold/60 hover:bg-white/10 transition-all"
+                  className="bg-white/5 border border-white/10 rounded-xl p-6 hover:border-brand-gold/60 hover:bg-white/10 transition-all group"
                 >
-                  <div className="h-10 w-10 rounded-lg bg-brand-gold text-brand-black font-bold flex items-center justify-center">
+                  <div className="h-11 w-11 rounded-lg bg-brand-gold text-brand-black font-bold flex items-center justify-center shadow-gold group-hover:scale-110 transition-transform">
                     0{idx + 1}
                   </div>
                   <h3 className="mt-5 font-display font-bold text-lg">
@@ -103,12 +116,21 @@ export default function HomePage() {
           </div>
         </section>
 
+        {/* Testimonials */}
+        <Testimonials />
+
         {/* Contact CTA */}
-        <section className="section-padding bg-white">
+        <section className="section-padding bg-brand-soft">
           <div className="container-premium">
-            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-black to-brand-gray p-10 sm:p-14 text-white">
+            <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-brand-black via-brand-gray to-brand-black p-10 sm:p-14 text-white">
               <div
                 className="absolute -right-10 -top-10 w-72 h-72 rounded-full opacity-30 blur-3xl"
+                style={{
+                  background: "radial-gradient(closest-side, #d4af37, transparent)"
+                }}
+              />
+              <div
+                className="absolute -left-10 -bottom-10 w-72 h-72 rounded-full opacity-20 blur-3xl"
                 style={{
                   background: "radial-gradient(closest-side, #d4af37, transparent)"
                 }}
