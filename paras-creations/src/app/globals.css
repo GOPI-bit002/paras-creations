@@ -2,23 +2,35 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap");
 
 :root {
+  --navy: #171e19;
+  --sage: #b7c6c2;
+  --taupe: #9f8d8b;
+  --beige: #d7c5b2;
+  --cyan: #d5f4f9;
+  --soft-blue: #bbe2f5;
+  --charcoal: #302b2f;
   --brand-black: #0a0a0a;
   --brand-gold: #d4af37;
 }
 
-html,
-body {
-  background-color: #fafafa;
-  color: #0a0a0a;
-  -webkit-font-smoothing: antialiased;
-  font-family: "Inter", system-ui, sans-serif;
+html {
+  scroll-behavior: smooth;
 }
 
-* {
-  scroll-behavior: smooth;
+body {
+  background-color: var(--navy);
+  color: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+}
+
+.text-outline {
+  -webkit-text-stroke: 1px #b7c6c2;
+  color: transparent;
 }
 
 /* Premium reusable component styles */
@@ -99,12 +111,19 @@ body {
 }
 
 /* Scrollbar */
-::-webkit-scrollbar { width: 10px; height: 10px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #c7c7c7; border-radius: 8px; }
-::-webkit-scrollbar-thumb:hover { background: #a0a0a0; }
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #171e19; }
+::-webkit-scrollbar-thumb { background: #302b2f; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #b7c6c2; }
 
 ::selection {
-  background: #d4af37;
-  color: #0a0a0a;
+  background: #b7c6c2;
+  color: #171e19;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-bounce-slow {
+    animation: none;
+  }
 }

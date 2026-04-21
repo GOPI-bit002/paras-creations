@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { company } from "@/data/company";
+import ConstructionChatWidget from "@/components/public/ConstructionChatWidget";
 
 export const metadata: Metadata = {
   title: `${company.name} — ${company.tagline}`,
@@ -18,7 +19,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className="min-h-screen bg-brand-soft text-brand-black">{children}</body>
+      <body className="min-h-screen antialiased">
+        {children}
+        <ConstructionChatWidget />
+      </body>
     </html>
   );
 }
